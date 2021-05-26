@@ -3,8 +3,6 @@ require("@nomiclabs/hardhat-waffle");
 
 dotenv.config();
 
-console.log('process.env.ROPSTEN_PRIVATE_KEY:', process.env.ROPSTEN_PRIVATE_KEY);
-
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
 task("accounts", "Prints the list of accounts", async () => {
@@ -30,7 +28,7 @@ task("accounts", "Prints the list of accounts", async () => {
     hardhat: {},
     ropsten: {
       url: "https://ropsten.infura.io/v3/06337af0e0bd4467acf96630197484ae",
-      accounts: [`0x${process.env.ROPSTEN_PRIVATE_KEY}`]
+      accounts: [`${process.env.ROPSTEN_PRIVATE_KEY}`]
     }
   }
 };
